@@ -1,6 +1,17 @@
+// Screen
+import Bulletin from "./screen/bulletin"
 
-export const App = () => {
+// Context
+import { CartEditContextProvider } from "./appContext"
+
+import "./App.scss";
+
+const App = () => {
   return (
-    <div>App</div>
+    <CartEditContextProvider>
+      <Bulletin />
+    </CartEditContextProvider>
   )
 }
+
+export default App

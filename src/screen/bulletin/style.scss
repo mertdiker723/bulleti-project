@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  .table {
+    width: 100%;
+    user-select: none;
+    border-collapse: collapse;
+    .table-body-row {
+      border: 1px solid rgb(97, 97, 97);
+      padding: 5px;
+      cursor: pointer;
+      text-align: center;
+
+      &.first-line {
+        text-align: left !important;
+      }
+    }
+  }
+
+  .cart-item {
+    border: 2px solid rgb(119, 119, 119);
+    background-color: white;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    min-width: 400px;
+    min-height: 200px;
+  }
+}
