@@ -22,6 +22,10 @@ const Body = ({ bulletin }: { bulletin: BulletinType[] }) => {
             payload
         });
     }
+
+    const selectedCheckItemHandler = (item: BulletinType, ratioItem: string) => {
+        return stateUnit.totalItems.find(x => x.value.NID === item.NID && x.ratio === ratioItem) ? "selected" : "";
+    }
     return (
         <tbody>
             {
@@ -53,19 +57,19 @@ const Body = ({ bulletin }: { bulletin: BulletinType[] }) => {
                                 <td className="table-body-row first-line"><b>{item.C}</b> {item.N}</td>
                                 <td className="table-body-row">Yorumlar</td>
                                 <td className="table-body-row">4</td>
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["1"].OC["0"].O)}>{item.OCG["1"].OC["0"].O}</td>
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["1"].OC["1"].O)}>{item.OCG["1"].OC["1"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["1"].OC["0"].O)}`} onClick={() => handleChange(item, item.OCG["1"].OC["0"].O)}>{item.OCG["1"].OC["0"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["1"].OC["1"].O)}`} onClick={() => handleChange(item, item.OCG["1"].OC["1"].O)}>{item.OCG["1"].OC["1"].O}</td>
                                 <td className="table-body-row" />
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["5"].OC["25"].O)}>{item.OCG["5"].OC["25"].O}</td>
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["5"].OC["26"].O)}>{item.OCG["5"].OC["26"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["5"].OC["25"].O)}`} onClick={() => handleChange(item, item.OCG["5"].OC["25"].O)}>{item.OCG["5"].OC["25"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["5"].OC["26"].O)}`} onClick={() => handleChange(item, item.OCG["5"].OC["26"].O)}>{item.OCG["5"].OC["26"].O}</td>
                                 <td className="table-body-row">H1</td>
                                 <td className="table-body-row" />
                                 <td className="table-body-row" />
                                 <td className="table-body-row" />
                                 <td className="table-body-row" />
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["2"].OC["3"].O)}>{item.OCG["2"].OC["3"].O}</td>
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["2"].OC["4"].O)}>{item.OCG["2"].OC["4"].O}</td>
-                                <td className="table-body-row" onClick={() => handleChange(item, item.OCG["2"].OC["5"].O)}>{item.OCG["2"].OC["5"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["2"].OC["3"].O)}`} onClick={() => handleChange(item, item.OCG["2"].OC["3"].O)}>{item.OCG["2"].OC["3"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["2"].OC["4"].O)}`} onClick={() => handleChange(item, item.OCG["2"].OC["4"].O)}>{item.OCG["2"].OC["4"].O}</td>
+                                <td className={`table-body-row ${selectedCheckItemHandler(item, item.OCG["2"].OC["5"].O)}`} onClick={() => handleChange(item, item.OCG["2"].OC["5"].O)}>{item.OCG["2"].OC["5"].O}</td>
                                 <td className="table-body-row" />
                                 <td className="table-body-row" />
                                 <td className="table-body-row">3</td>

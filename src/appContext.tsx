@@ -21,6 +21,16 @@ const cartEditReducer = (state: InitialStateType, action: { type: string; payloa
     const { type, payload } = action;
     switch (type) {
         case "VAL": {
+            if (state.totalItems.find(x => x.value.NID === payload.value.NID && x.ratio === payload.ratio)) {
+                return {
+                    totalItems: state.totalItems.filter(item => item.value.NID !== action.payload.value.NID),
+                };
+            }
+            if (state.totalItems.find(x => x.value.NID === payload.value.NID)) {
+                return {
+                    totalItems: state.totalItems.map(item => item.value.NID === payload.value.NID ? payload : item)
+                }
+            }
             return {
                 totalItems: [
                     ...state.totalItems,

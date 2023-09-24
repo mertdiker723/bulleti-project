@@ -1,0 +1,12 @@
+.cart {
+  padding: 15px;
+
+  &__row {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid rgb(134, 134, 134);
+  }
+
+  .total-count {
+    margin-top: 10px;
+  }
+}
